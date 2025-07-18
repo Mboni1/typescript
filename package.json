@@ -1,0 +1,29 @@
+{
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "name": "typescript",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "devDependencies": {
+    "@types/node": "^24.0.14",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  },
+  "scripts": {
+  
+    "start": "ts-node index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mboni1/typescript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mboni1/typescript/issues"
+  },
+  "homepage": "https://github.com/Mboni1/typescript#readme",
+  "description": ""
+}
