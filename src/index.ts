@@ -1,3 +1,4 @@
+
 enum OrderStatus {
   Pending = "PENDING",
   Shipped = "SHIPPED",
@@ -17,4 +18,4 @@ function getStatusMessage(status: OrderStatus): string {
   return statusMessages[status] ?? "Unknown status.";
 }
 
-console.log(getStatusMessage(OrderStatus.Shipped)); // "Your order is on the way."
+console.log(getStatusMessage(OrderStatus.Shipped)); // "Your order is on the way.
