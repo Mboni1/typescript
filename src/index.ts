@@ -1,15 +1,20 @@
-const items = [
-  { price: 2 },
-  { quantity: 4 },
-  { discount: 0.1 }
-];
-
-export function calculateTotal(
-    price:number,
-    quantity:number,
-    discount:number
-): number {
-    const result= price * quantity *(1-discount);
-    console.log("calculatedTotal:",result);
-    return result;
+enum OrderStatus {
+  Pending = "PENDING",
+  Shipped = "SHIPPED",
+  Delivered = "DELIVERED",
+  Cancelled = "CANCELLED"
 }
+
+// Twifashisha Record type aho gukoresha switch
+const statusMessages: Record<OrderStatus, string> = {
+  [OrderStatus.Pending]: "Your order is being processed.",
+  [OrderStatus.Shipped]: "Your order is on the way.",
+  [OrderStatus.Delivered]: "Order delivered successfully.",
+  [OrderStatus.Cancelled]: "Order has been cancelled.",
+};
+
+function getStatusMessage(status: OrderStatus): string {
+  return statusMessages[status] ?? "Unknown status.";
+}
+
+console.log(getStatusMessage(OrderStatus.Shipped)); // "Your order is on the way."
