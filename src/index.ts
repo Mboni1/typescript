@@ -1,3 +1,4 @@
+
 type Employee = {
     readonly id: number,
     name: string,
@@ -11,3 +12,5 @@ let employee: Employee = {
      console.log(date)
     }
 }
+
+
