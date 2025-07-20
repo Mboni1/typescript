@@ -1,3 +1,4 @@
+
 "use strict";
 function kgToLbs(weight: number | string): number {
     if(typeof weight === 'number')
@@ -8,3 +9,4 @@ function kgToLbs(weight: number | string): number {
 
 kgToLbs(10);
 kgToLbs('10kg');
+
