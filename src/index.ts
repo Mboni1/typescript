@@ -1,3 +1,4 @@
+
 let employee: {
     id:number,
     name:string,
@@ -6,4 +7,6 @@ let employee: {
     name:"mosh",
     retire:(date: Date)=>{
         console.log(date)
-    }};
+    }}
+
+
