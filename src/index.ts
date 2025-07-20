@@ -1,10 +1,19 @@
-"use strict";
-function kgToLbs(weight: number | string): number {
-    if(typeof weight === 'number')
-        return weight * 2.2;
-    else
-        return parseInt(weight) * 2.2;
-}
 
-kgToLbs(10);
-kgToLbs('10kg');
+
+type name = {
+  firstName: string;
+  lastName: string;
+};
+
+type age = {
+  age: number;
+};
+
+type people = name & age;
+
+const person: people = {
+  firstName: "Jean",
+  lastName: "Claude",
+  age: 28,
+};
+
