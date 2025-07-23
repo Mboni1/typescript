@@ -1,5 +1,10 @@
-function greet(name: string): string {
-  return `Hello, ${name}!`;
-}
 
-console.log(greet("Claude"));
+interface person {
+    name: string;
+    age: number;
+    height?:number
+}
+const person: person = {
+    name: "tim",
+    age: 23
+}

@@ -1,6 +1,6 @@
 "use strict";
-function greet(name) {
-    return `Hello, ${name}!`;
-}
-console.log(greet("Claude"));
+const person = {
+    name: "tim",
+    age: 23
+};
 //# sourceMappingURL=index.js.map
