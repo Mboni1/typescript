@@ -1,17 +1,6 @@
 "use strict";
-class DataStore {
-    constructor() {
-        this.data = [];
-    }
-    add(item) {
-        this.data.push(item);
-    }
-    getAll() {
-        return this.data;
-    }
-}
-const store = new DataStore();
-store.add(1);
-store.add(2);
-console.log(store.getAll());
+const add = (a, b) => a + b;
+const multiply = (a, b) => a * b;
+console.log(add(2, 3));
+console.log(multiply(2, 3));
 //# sourceMappingURL=index.js.map

@@ -1,20 +1,13 @@
-class DataStore<T> {
-  private data: T[] = [];
 
-  add(item: T) {
-    this.data.push(item);
-  }
+// Function type annotation
+type MathOperation = (a: number, b: number) => number;
 
-  getAll(): T[] {
-    return this.data;
-  }
-}
-
-const store = new DataStore<number>();
-store.add(1);
-store.add(2);
-
-console.log(store.getAll()); // [1, 2]
+// Implementation
+const add: MathOperation = (a, b) => a + b;
+const multiply: MathOperation = (a, b) => a * b;
 
 
+// Usage
+console.log(add(2, 3));      // 5
+console.log(multiply(2, 3)); // 6
 
