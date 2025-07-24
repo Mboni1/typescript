@@ -1,15 +1,17 @@
 "use strict";
-class Person {
-    constructor(name) {
-        this.name = name;
-        Person.population++;
+class DataStore {
+    constructor() {
+        this.data = [];
     }
-    static getPopulation() {
-        return Person.population;
+    add(item) {
+        this.data.push(item);
+    }
+    getAll() {
+        return this.data;
     }
 }
-Person.population = 0;
-const p1 = new Person("Alice");
-const p2 = new Person("Bob");
-console.log(Person.getPopulation());
+const store = new DataStore();
+store.add(1);
+store.add(2);
+console.log(store.getAll());
 //# sourceMappingURL=index.js.map
