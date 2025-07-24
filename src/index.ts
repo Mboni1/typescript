@@ -12,6 +12,11 @@ class Person {
   }
 }
 
+
 const person = new Person("Alice", 30);
 console.log(person.name);  // Accessible
-person.greet();            // Accessible
+person.greet();            // Accessibl
+ 
+
+
+
