@@ -8,9 +8,13 @@ function formatNumbers(
   return numbers.map(formatter);
 }
 
+
 // Usage
+
 const currencyFormatter: NumberFormatter = (n) => `$${n.toFixed(2)}`;
 const numbers = [1.99, 2.50, 3.75];
 
 console.log(formatNumbers(numbers, currencyFormatter));
 // ["$1.99", "$2.50", "$3.75"]
+
+
