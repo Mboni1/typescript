@@ -1,6 +1,8 @@
 "use strict";
-const add = (a, b) => a + b;
-const multiply = (a, b) => a * b;
-console.log(add(2, 3));
-console.log(multiply(2, 3));
+function formatNumbers(numbers, formatter) {
+    return numbers.map(formatter);
+}
+const currencyFormatter = (n) => `$${n.toFixed(2)}`;
+const numbers = [1.99, 2.50, 3.75];
+console.log(formatNumbers(numbers, currencyFormatter));
 //# sourceMappingURL=index.js.map

@@ -1,13 +1,20 @@
+// Type for a function that takes a number and returns a string
+type NumberFormatter = (num: number) => string;
 
-// Function type annotation
-type MathOperation = (a: number, b: number) => number;
-
-// Implementation
-const add: MathOperation = (a, b) => a + b;
-const multiply: MathOperation = (a, b) => a * b;
+function formatNumbers(
+  numbers: number[],
+  formatter: NumberFormatter
+): string[] {
+  return numbers.map(formatter);
+}
 
 
 // Usage
-console.log(add(2, 3));      // 5
-console.log(multiply(2, 3)); // 6
+
+const currencyFormatter: NumberFormatter = (n) => `$${n.toFixed(2)}`;
+const numbers = [1.99, 2.50, 3.75];
+
+console.log(formatNumbers(numbers, currencyFormatter));
+// ["$1.99", "$2.50", "$3.75"]
+
 
