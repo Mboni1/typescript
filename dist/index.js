@@ -1,13 +1,25 @@
 "use strict";
-class Person {
-    constructor(name, age) {
-        this.name = name;
-        this.age = age;
-    }
-    greet() {
-        console.log(`Hello, my name is ${this.name}`);
+class PaymentProcessor {
+    validatePayment(amount) {
+        return amount > 0;
     }
 }
-const person = new Person("Alice", 30);
-person.greet();
+class CreditCardProcessor extends PaymentProcessor {
+    processPayment(amount) {
+        if (this.validatePayment(amount)) {
+            console.log(`Processing credit card payment of $${amount}`);
+        }
+    }
+}
+class PayPalProcessor extends PaymentProcessor {
+    processPayment(amount) {
+        if (this.validatePayment(amount)) {
+            console.log(`Processing PayPal payment of $${amount}`);
+        }
+    }
+}
+const creditCard = new CreditCardProcessor();
+creditCard.processPayment(100);
+const paypal = new PayPalProcessor();
+paypal.processPayment(50);
 //# sourceMappingURL=index.js.map
