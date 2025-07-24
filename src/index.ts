@@ -1,4 +1,5 @@
 
+
 class Person {
   // Properties with type annotations
   name: string;
@@ -19,3 +20,5 @@ class Person {
 // Usage
 const person = new Person("Alice", 30);
 person.greet();
+
+
