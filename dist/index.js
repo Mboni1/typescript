@@ -1,19 +1,14 @@
 "use strict";
-class BankAccount {
-    constructor(accountNumber, initialBalance) {
-        this.accountNumber = accountNumber;
-        this.balance = initialBalance;
+class Person {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
     }
-    deposit(amount) {
-        if (amount > 0) {
-            this.balance += amount;
-        }
-    }
-    getBalance() {
-        return this.balance;
+    greet() {
+        console.log(`Hello, I'm ${this.name}`);
     }
 }
-const account = new BankAccount("12345", 1000);
-console.log(account.accountNumber);
-console.log(account.getBalance());
+const person = new Person("Alice", 30);
+console.log(person.name);
+person.greet();
 //# sourceMappingURL=index.js.map
