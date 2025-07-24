@@ -22,3 +22,5 @@ const account = new BankAccount("12345", 1000);
 console.log(account.accountNumber);  // OK
 // console.log(account.balance);     // Error: Property 'balance' is private
 console.log(account.getBalance());   // Proper way to access
+
+
