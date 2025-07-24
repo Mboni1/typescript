@@ -1,20 +1,17 @@
-class Person {
-  static population = 0; // static attribute
+class DataStore<T> {
+  private data: T[] = [];
 
-  name: string;
-
-  constructor(name: string) {
-    this.name = name;
-    Person.population++; // increase static value
+  add(item: T) {
+    this.data.push(item);
   }
 
-  static getPopulation() {
-    return Person.population;
+  getAll(): T[] {
+    return this.data;
   }
 }
 
+const store = new DataStore<number>();
+store.add(1);
+store.add(2);
 
-const p1 = new Person("Alice");
-const p2 = new Person("Bob");
-
-console.log(Person.getPopulation()); // Output: 2
+console.log(store.getAll()); // [1, 2]
