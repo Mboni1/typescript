@@ -14,7 +14,9 @@ class Person {
 }
 
 
+
 const p1 = new Person("Alice");
 const p2 = new Person("Bob");
 
 console.log(Person.getPopulation()); // Output: 2
+
