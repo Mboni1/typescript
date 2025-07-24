@@ -15,3 +15,6 @@ store.add(1);
 store.add(2);
 
 console.log(store.getAll()); // [1, 2]
+
+
+
