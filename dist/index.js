@@ -1,25 +1,19 @@
 "use strict";
-class PaymentProcessor {
-    validatePayment(amount) {
-        return amount > 0;
+class BankAccount {
+    constructor(accountNumber, initialBalance) {
+        this.accountNumber = accountNumber;
+        this.balance = initialBalance;
     }
-}
-class CreditCardProcessor extends PaymentProcessor {
-    processPayment(amount) {
-        if (this.validatePayment(amount)) {
-            console.log(`Processing credit card payment of $${amount}`);
+    deposit(amount) {
+        if (amount > 0) {
+            this.balance += amount;
         }
     }
-}
-class PayPalProcessor extends PaymentProcessor {
-    processPayment(amount) {
-        if (this.validatePayment(amount)) {
-            console.log(`Processing PayPal payment of $${amount}`);
-        }
+    getBalance() {
+        return this.balance;
     }
 }
-const creditCard = new CreditCardProcessor();
-creditCard.processPayment(100);
-const paypal = new PayPalProcessor();
-paypal.processPayment(50);
+const account = new BankAccount("12345", 1000);
+console.log(account.accountNumber);
+console.log(account.getBalance());
 //# sourceMappingURL=index.js.map

@@ -1,30 +1,24 @@
-abstract class PaymentProcessor {
-  abstract processPayment(amount: number): void;
+class BankAccount {
+  private balance: number;
+  public accountNumber: string;
   
-  validatePayment(amount: number): boolean {
-    return amount > 0;
+  constructor(accountNumber: string, initialBalance: number) {
+    this.accountNumber = accountNumber;
+    this.balance = initialBalance;
   }
-}
-
-class CreditCardProcessor extends PaymentProcessor {
-  processPayment(amount: number): void {
-    if (this.validatePayment(amount)) {
-      console.log(`Processing credit card payment of $${amount}`);
+  
+  public deposit(amount: number) {
+    if (amount > 0) {
+      this.balance += amount;  // Can access private member within class
     }
   }
-}
-
-class PayPalProcessor extends PaymentProcessor {
-  processPayment(amount: number): void {
-    if (this.validatePayment(amount)) {
-      console.log(`Processing PayPal payment of $${amount}`);
-    }
+  
+  public getBalance(): number {
+    return this.balance;  // Expose through controlled method
   }
 }
 
-// Usage
-const creditCard = new CreditCardProcessor();
-creditCard.processPayment(100);
-
-const paypal = new PayPalProcessor();
-paypal.processPayment(50);
+const account = new BankAccount("12345", 1000);
+console.log(account.accountNumber);  // OK
+// console.log(account.balance);     // Error: Property 'balance' is private
+console.log(account.getBalance());   // Proper way to access
