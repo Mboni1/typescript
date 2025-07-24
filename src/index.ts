@@ -1,17 +1,23 @@
-class Person {
-  public name: string;  // Explicit public (redundant but clear)
-  age: number;         // Implicitly public
+class Vehicle {
+  protected speed: number = 0;
   
-  constructor(name: string, age: number) {
-    this.name = name;
-    this.age = age;
+  protected accelerate(amount: number) {
+    this.speed += amount;
   }
   
-  public greet() {
-    console.log(`Hello, I'm ${this.name}`);
+  public getSpeed() {
+    return this.speed;
   }
 }
 
-const person = new Person("Alice", 30);
-console.log(person.name);  // Accessible
-person.greet();            // Accessible
+class Car extends Vehicle {
+  public drive() {
+    this.accelerate(10);  // Can access protected member from subclass
+    console.log(`Driving at ${this.speed} km/h`);
+  }
+}
+
+const car = new Car();
+car.drive();              // Works
+// car.accelerate(10);     // Error: Protected member
+// console.log(car.speed); // Error: Protected member
