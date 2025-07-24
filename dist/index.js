@@ -1,14 +1,21 @@
 "use strict";
-class Person {
-    constructor(name, age) {
-        this.name = name;
-        this.age = age;
+class Vehicle {
+    constructor() {
+        this.speed = 0;
     }
-    greet() {
-        console.log(`Hello, I'm ${this.name}`);
+    accelerate(amount) {
+        this.speed += amount;
+    }
+    getSpeed() {
+        return this.speed;
     }
 }
-const person = new Person("Alice", 30);
-console.log(person.name);
-person.greet();
+class Car extends Vehicle {
+    drive() {
+        this.accelerate(10);
+        console.log(`Driving at ${this.speed} km/h`);
+    }
+}
+const car = new Car();
+car.drive();
 //# sourceMappingURL=index.js.map
