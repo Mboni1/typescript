@@ -1,26 +1,22 @@
-class BankAccount {
-  private balance: number;
-  public accountNumber: string;
+class Person {
+  public name: string;  // Explicit public (redundant but clear)
+  age: number;         // Implicitly public
   
-  constructor(accountNumber: string, initialBalance: number) {
-    this.accountNumber = accountNumber;
-    this.balance = initialBalance;
+  constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
   }
   
-  public deposit(amount: number) {
-    if (amount > 0) {
-      this.balance += amount;  // Can access private member within class
-    }
-  }
-  
-  public getBalance(): number {
-    return this.balance;  // Expose through controlled method
+  public greet() {
+    console.log(`Hello, I'm ${this.name}`);
   }
 }
 
-const account = new BankAccount("12345", 1000);
-console.log(account.accountNumber);  // OK
-// console.log(account.balance);     // Error: Property 'balance' is private
-console.log(account.getBalance());   // Proper way to access
+
+const person = new Person("Alice", 30);
+console.log(person.name);  // Accessible
+person.greet();            // Accessibl
+ 
+
 
 
