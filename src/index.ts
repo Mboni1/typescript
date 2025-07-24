@@ -10,6 +10,7 @@ class Vehicle {
   }
 }
 
+
 class Car extends Vehicle {
   public drive() {
     this.accelerate(10);  // Can access protected member from subclass
@@ -19,5 +20,9 @@ class Car extends Vehicle {
 
 const car = new Car();
 car.drive();              // Works
-// car.accelerate(10);     // Error: Protected member
-// console.log(car.speed); // Error: Protected member
+         // Accessibl
+ 
+
+
+
+
