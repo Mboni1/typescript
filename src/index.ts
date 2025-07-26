@@ -1,3 +1,4 @@
+
 class Dog {
     firstName: string;
     lastName : string;
@@ -19,3 +20,4 @@ function getName(animal: Cat | Dog){
         console.log("the name is", animal.firstName+ " "+ animal.lastName)
     }
 }
+
