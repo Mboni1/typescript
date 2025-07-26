@@ -1,5 +1,6 @@
 type StringOrNumber = string | number;
 
+
 function add1(value: StringOrNumber): StringOrNumber {
     if (typeof value === 'string'){
        return value + "1"  
@@ -7,3 +8,4 @@ function add1(value: StringOrNumber): StringOrNumber {
       return value+ 1  
     }   
 }
+
