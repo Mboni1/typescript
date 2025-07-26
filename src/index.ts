@@ -1,16 +1,9 @@
-// Type for a function that takes a number and returns a string
-type NumberFormatter = (num: number) => string;
+type StringOrNumber = string | number;
 
-function formatNumbers(
-  numbers: number[],
-  formatter: NumberFormatter
-): string[] {
-  return numbers.map(formatter);
+function add1(value: StringOrNumber): StringOrNumber {
+    if (typeof value === 'string'){
+       return value + "1"  
+    } else {
+      return value+ 1  
+    }   
 }
-
-// Usage
-const currencyFormatter: NumberFormatter = (n) => `$${n.toFixed(2)}`;
-const numbers = [1.99, 2.50, 3.75];
-
-console.log(formatNumbers(numbers, currencyFormatter));
-// ["$1.99", "$2.50", "$3.75"]
