@@ -1,10 +1,21 @@
 "use strict";
-function add1(value) {
-    if (typeof value === 'string') {
-        return value + "1";
+class Dog {
+    constructor(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+}
+class Cat {
+    constructor(firstName) {
+        this.firstName = firstName;
+    }
+}
+function getName(animal) {
+    if (animal instanceof Cat) {
+        console.log("the name is ", animal.firstName);
     }
     else {
-        return value + 1;
+        console.log("the name is", animal.firstName + " " + animal.lastName);
     }
 }
 //# sourceMappingURL=index.js.map
