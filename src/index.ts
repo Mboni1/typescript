@@ -1,8 +1,9 @@
+
 type Log = Warning | Info | Success
 
 interface Warning {
     type: "Warning"
-    msg: string;
+    msg: string
 }
 
 
@@ -29,3 +30,4 @@ function handleMsg(log: Log) {
             break;       
     }
 }
+
