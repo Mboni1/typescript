@@ -1,23 +1,33 @@
 
-class Dog {
-    firstName: string;
-    lastName : string;
-    constructor(firstName: string, lastName: string){
-        this.firstName = firstName;
-        this.lastName = lastName
-    }
+type Log = Warning | Info | Success
+
+interface Warning {
+    type: "Warning"
+    msg: string
 }
-class Cat {
-    firstName: string;
-    constructor(firstName: string){
-        this.firstName = firstName;
-    }
+
+
+interface Info {
+    type: "Info"
+    text: string
 }
-function getName(animal: Cat | Dog){
-    if (animal instanceof Cat){
-        console.log("the name is ", animal.firstName)
-    } else {
-        console.log("the name is", animal.firstName+ " "+ animal.lastName)
+
+
+interface Success {
+    type: "Success"
+    message: string
+}
+function handleMsg(log: Log) {
+    switch (log.type){
+        case "Warning":
+            console.log(log.msg)
+            break;
+        case "Info":
+            console.log(log.text)
+            break;
+        case "Success":
+            console.log(log.message)
+            break;       
     }
 }
 
