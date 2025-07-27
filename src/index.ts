@@ -1,3 +1,4 @@
+
 // Example interface we'll work with
 interface User {
   id: number;
@@ -16,6 +17,12 @@ type PartialUser = Partial<User>;
   email?: string;
   age?: number;
   createdAt?: Date;
+
+type Log = Warning | Info | Success
+
+interface Warning {
+    type: "Warning"
+    msg: string
 }
 */
 
@@ -44,7 +51,6 @@ type ImmutableUser = Readonly<User>;
 // 4. Pick - Select specific properties
 type UserIdentity = Pick<User, 'id' | 'name'>;
 /* { id: number; name: string } */
-
 // 5. Omit - Remove specific properties
 type UserWithoutDates = Omit<User, 'createdAt'>;
 /* { id: number; name: string; email: string; age?: number } */
@@ -52,3 +58,4 @@ type UserWithoutDates = Omit<User, 'createdAt'>;
 // 6. Record - Create mapped type
 type UserRoles = Record<string, 'admin' | 'user' | 'guest'>;
 /* { [key: string]: 'admin' | 'user' | 'guest' } */
+
