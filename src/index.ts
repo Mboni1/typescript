@@ -13,3 +13,4 @@ export { name, log };
 
 // Rename during export
 export { name as utilsName, log as logMessage };
+
