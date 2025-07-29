@@ -32,7 +32,7 @@ function dealerTurn(dealerHand: Icard[], deck: Deck): number {
 let dealerHand: Icard[] = [];
 let playerHand: Icard[] = [];
 const deck: Deck = new Deck();
-let  balance = 100;
+let  balance = 100
 
 while (balance > 0){
     console.log(`\nPlayer funds $${balance}`);
@@ -75,3 +75,7 @@ while (balance > 0){
     }
 }
 console.log(" You ran out of money!");
+
+// Rename during export
+export { name as utilsName, log as logMessage };
+
