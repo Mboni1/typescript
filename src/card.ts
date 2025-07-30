@@ -1,6 +1,6 @@
-import { Icard, Suit } from "./types";
+import { ICard, Suit } from "./type";
 
-class Card implements Icard {
+class Card implements ICard {
     static readonly CARD_VALUES: Record<number, string> = {
         1: "A",
         2: "2",

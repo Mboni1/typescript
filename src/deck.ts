@@ -1,10 +1,10 @@
-import Card from "./card";
+import ICard from "./card";
 import { IDealable ,Suit } from "./type";
 import { shuffleArray } from "./utils";
 
 
 class Deck implements IDealable {
-    private deck: Card[] = [];
+    private deck: ICard[] = [];
 
     constructor() {
         this.reset()
@@ -14,8 +14,8 @@ class Deck implements IDealable {
         this.deck = shuffleArray(cards);
     
     }
-    deal (num: number): Card[] {
-        const dealtCards: Card[] = [];
+    deal (num: number): ICard[] {
+        const dealtCards: ICard[] = [];
       
         for (let i = 0; i < num; i++) {
             const card = this.deck.pop();
@@ -24,11 +24,11 @@ class Deck implements IDealable {
         return dealtCards
     }
     private makeDeck() {
-        const cards: Card[] = []
+        const cards: ICard[] = []
         const suits = [Suit.Hearts, Suit.Diamonds, Suit.Clubs, Suit.Spades]
         for (let suit =0; suit < 4; suit++){
             for (let value = 1; value <= 13; value++) {
-                const card = new Card(value,suits[suit])
+                const card = new ICard(value,suits[suit])
                 cards.push(card);
             }
         }
